@@ -129,7 +129,6 @@ Objects:
 | Availability              |   Array     |         List of all the hourly time slots the Helper is available |
 
 ### Networking
-- [Add list of network requests by screen ]
 - Profile Screen
     - (Read/GET) Query logged in user object
     - (Update/PUT) Update user profile image
