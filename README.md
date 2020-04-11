@@ -8,7 +8,7 @@
 
 ## Overview
 ### Description
-Our app helps people receive deliveries.
+This app allows a user to place an order for delivery from different stores in their area and was developed as a response to the COVID-19 pandemic so people, especially high-risk people like the elderly, wouldn't need to leave their homes.
 
 ### App Evaluation
 [Evaluation of your app across the following attributes]
