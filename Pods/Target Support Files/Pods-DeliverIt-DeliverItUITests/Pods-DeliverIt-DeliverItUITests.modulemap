@@ -1,0 +1,6 @@
+framework module Pods_DeliverIt_DeliverItUITests {
+  umbrella header "Pods-DeliverIt-DeliverItUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
