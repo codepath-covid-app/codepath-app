@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class LoginViewController: UIViewController {
 
@@ -24,6 +25,7 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func signUp(_ sender: Any) {
+        self.performSegue(withIdentifier: "loginSegue", sender: nil)
     }
     
     /*
