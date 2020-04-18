@@ -41,9 +41,9 @@ This app allows a user to place an order for delivery from different stores in t
 
 ### 2. Screen Archetypes
 
-* Login
+ [X]Login
    * User can login
-* Register
+[X] Register
    * User can create a new account
 * Stream/View posts
    * User can view a feed of all the posts made.
