@@ -38,6 +38,7 @@ This app allows a user to place an order for delivery from different stores in t
 * User can view tags specifying if a person is elderly/handicapped, in order to prioritize tasks.
 * User can pay for tasks.
 
+App : https://imgur.com/a/kSynqMv.gif
 
 ### 2. Screen Archetypes
 
