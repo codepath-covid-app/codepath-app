@@ -11,22 +11,38 @@ import Parse
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func signUpPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "signUpSegue", sender: self)
+    }
+    
     
 
-    @IBAction func login(_ sender: Any) {
-    }
-    
-    
-    @IBAction func signUp(_ sender: Any) {
-        self.performSegue(withIdentifier: "loginSegue", sender: nil)
-    }
+    @IBAction func onLogIn(_ sender: Any) {
+        guard let username = emailTextField.text,
+                let userPassword = passwordTextField.text else {
+                    return
+            
+        }
+        PFUser.logInWithUsername(inBackground: username, password: userPassword) { (user, error) in
+            if user != nil{
+                print("We logged in!")
+            } else{
+                print("Error:\(error?.localizedDescription ?? "There was a problem logging in")")
+            }
+            }
+        
+        }
     
     /*
     // MARK: - Navigation
@@ -37,5 +53,6 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+
 
 }

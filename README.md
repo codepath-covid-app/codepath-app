@@ -25,9 +25,9 @@ This app allows a user to place an order for delivery from different stores in t
 
 **Required Must-have Stories**
 
-* User can create a new account
-* User can login
-* User can select a helper and create a shopping list specifying a location for delivery
+- [x] User can create a new account
+- [x] User can login
+* User can select nearby helpers and create a shopping list specifying a location for delivery
 * User can view helpers in their area
 * User can view helper availability
 
@@ -38,6 +38,7 @@ This app allows a user to place an order for delivery from different stores in t
 * User can view tags specifying if a person is elderly/handicapped, in order to prioritize tasks.
 * User can pay for tasks.
 
+App : https://imgur.com/a/kSynqMv.gif
 
 ### 2. Screen Archetypes
 
