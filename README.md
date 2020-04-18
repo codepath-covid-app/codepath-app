@@ -26,7 +26,7 @@ This app allows a user to place an order for delivery from different stores in t
 **Required Must-have Stories**
 
 - [x] User can create a new account
--  [x]User can login
+- [x] User can login
 * User can select nearby helpers and create a shopping list specifying a location for delivery
 * User can view helpers in their area
 * User can view helper availability
