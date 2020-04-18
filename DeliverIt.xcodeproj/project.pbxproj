@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,7 @@
 		9936BDAC2442585B001D4C9C /* DeliverItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9936BDAB2442585B001D4C9C /* DeliverItUITests.swift */; };
 		99BAFA5B24492819005633B0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BAFA5A24492819005633B0 /* LoginViewController.swift */; };
 		CBEEFCF912FD97DF226AF470 /* Pods_DeliverIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC6F70E0C1780B38692AE3F /* Pods_DeliverIt.framework */; };
+		F85C968B244A6D9900FB98A3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85C968A244A6D9900FB98A3 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		9936BDAD2442585B001D4C9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99BAFA5A24492819005633B0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C1123B45E7977037170ED665 /* Pods-DeliverIt-DeliverItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliverIt-DeliverItUITests.debug.xcconfig"; path = "Target Support Files/Pods-DeliverIt-DeliverItUITests/Pods-DeliverIt-DeliverItUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F85C968A244A6D9900FB98A3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				9936BD942442585B001D4C9C /* LaunchScreen.storyboard */,
 				9936BD972442585B001D4C9C /* Info.plist */,
 				99BAFA5A24492819005633B0 /* LoginViewController.swift */,
+				F85C968A244A6D9900FB98A3 /* SignUpViewController.swift */,
 			);
 			path = DeliverIt;
 			sourceTree = "<group>";
@@ -165,7 +168,6 @@
 				3F4638CF599B06B3A7CABB14 /* Pods-DeliverItTests.debug.xcconfig */,
 				7B9E1AF14DFC80FF2E47180F /* Pods-DeliverItTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -410,6 +412,7 @@
 			files = (
 				99BAFA5B24492819005633B0 /* LoginViewController.swift in Sources */,
 				9936BD8A24425859001D4C9C /* AppDelegate.swift in Sources */,
+				F85C968B244A6D9900FB98A3 /* SignUpViewController.swift in Sources */,
 				9936BD8C24425859001D4C9C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
