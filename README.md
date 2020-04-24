@@ -27,16 +27,17 @@ This app allows a user to place an order for delivery from different stores in t
 
 - [x] User can create a new account
 - [x] User can login
-* User can select nearby helpers and create a shopping list specifying a location for delivery
-* User can view helpers in their area
-* User can view helper availability
+* User can select a category and view businesses related to that category
+* User can select various products or services to request from a business
+* User can view availability of businesses and fill in time slots to have their products delivered or to have service performed
 
 
 **Optional Nice-to-have Stories**
 
-* User can rate users helping with tasks.
-* User can view tags specifying if a person is elderly/handicapped, in order to prioritize tasks.
+* User can rate business services.
 * User can pay for tasks.
+* User can view history of tasks requested from businesses.
+* User can request to register/post to their own business onto app.
 
 App : https://imgur.com/a/kSynqMv.gif
 
@@ -46,19 +47,22 @@ App : https://imgur.com/a/kSynqMv.gif
    * User can login
 * Register
    * User can create a new account
-* Stream/View posts
-   * User can view a feed of all the posts made.
-* Make a post
-   * User can make a post specifying where he/she is going (for delivery).
+* Categories
+    * User can view and select a category
+* Stream/View businesses
+   * User can view a feed of all the businesses associated to the selected category.
+* Make a request
+   * User can make a request for what services or products they require
 * Schedule
-   * Helper sees user requests on a schedule
+   * User can see availability schedulem for businesses
 
 
 ### 3. Navigation
 
 **Tab Navigation** (Tab to Screen)
 
-* Schedule
+* Profile
+* Categories
 
 
 **Flow Navigation** (Screen to Screen)
@@ -67,14 +71,17 @@ App : https://imgur.com/a/kSynqMv.gif
    * Login Screen
 * Login Screen
    * Home Screen
-* Home Screen
-    * List
-* List Screen
-    * Availability Screen
-* Availability Screen
-    * Shopping List Creation Screen
-* Shopping List Creation Screen
-    * Home Screen
+* Home Screen (of Categories)
+    * Profile Screen (tab)
+* Businesses List Screen
+    * Scheduling Screen
+    * Order/ Service Request 
+* Order/ Service Request Screen
+    * Order/ Service Request Confirmation Screen
+* Scheduling Screen
+    * Calendar Screen
+   
+
 
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
@@ -90,9 +97,8 @@ App : https://imgur.com/a/kSynqMv.gif
 [This section will be completed in Unit 9]
 Objects:
 - Users
-- Posts/Task Requests
-- Likes (accept requests)
-- Shopping List
+- Products/Service Requests
+- Businesses
 - Availability Schedule
 
 ### Models
@@ -107,35 +113,51 @@ Objects:
 |     Phone Number     |  String    |    Phone number of user         |
 
 
-- Task Request
+-Products Request
 
 | Property        | Column 2 | Column 3                                          |
 | --------------- | -------- | ------------------------------------------------- |
 | Store           | String   | Name of the store that user wants deliveries from |
-| Time            | DateTime | Time that user prefers the deliveries by          |
+| Time            | DateTime | Time that user prefers the service by          |
 | Items           | String   | Items that user wants                             |
 | Number of items | Number   | Total number of items requested                   |
 | Price           | String   | Total Price of all Items                          |\
 | Time Limit                |    Number      | Time limit for how long user can take to make request |
 
-- Helpers
+- Service Request
+| Property        | Column 2 | Column 3                                          |
+| --------------- | -------- | ------------------------------------------------- |
+| Business Name           | String   | Name of the business that user wants service from |
+| Time            | DateTime | Time that user prefers the service to be done          |
+| Tasks           | String   | Specific tasks the user wants accomplished from this business                          |
+| Number of tasks | Number   | Total number of tasks requested from this business                   |
+| Price           | String   | Total Price of all Tasks                          |\
+| Time Limit                |    Number      | Time limit for how long user can take to make request |
+
+
+- Businesses
 
 | Property      | Type   | Description                     |
 | ------------- | ------ | ------------------------------- |
-| Name          | String | Name of user                    |
-| Profile Image | File   | Image of user                   |
-| Age           | Number | Age of the user                 |
+| Name          | String | Name of Business                    |
+| Logo  | File   | Logo image of Business                   |
+| Services/Products      | Array | List of services or products available by this business                |
 | Address       | String | Location of deliveries drop-off |
 | Phone Number  | String | Phone number of user            |
-| Availability              |   Array     |         List of all the hourly time slots the Helper is available |
+| Availability              |   Array     |         List of all the hourly time slots the business has available |
 
 ### Networking
 - Profile Screen
     - (Read/GET) Query logged in user object
     - (Update/PUT) Update user profile image
-- Create Delivery Screen 
-    - (Create/POST) Create a new post object
-    - (Read/GET) Query shopping list object.
+- Categories Screen
+    - (Read/GET) Fetch all businesses tagged with the associated category
+- Business Screen
+    - (Read/GET) Fetch information about products and services offered from this business 
+- Scheduling Screen
+    - (Create/POST) User can select products/services
+    - (Read/GET) Fetch business' availabiity calendar
+    - (Create/POST) User can fill in time slot on business calendar
 - Receipts Screen
     - (Read/GET) Query post object.
     ![](https://i.imgur.com/7aLwpG5.png)
