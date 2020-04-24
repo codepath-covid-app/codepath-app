@@ -37,6 +37,7 @@ This app allows a user to place an order for delivery from different stores in t
 * User can rate business services.
 * User can pay for tasks.
 * User can view history of tasks requested from businesses.
+* User can request to register/post to their own business onto app.
 
 App : https://imgur.com/a/kSynqMv.gif
 
@@ -58,7 +59,8 @@ App : https://imgur.com/a/kSynqMv.gif
 
 **Tab Navigation** (Tab to Screen)
 
-* Schedule
+* Profile
+* Categories
 
 
 **Flow Navigation** (Screen to Screen)
@@ -93,9 +95,8 @@ App : https://imgur.com/a/kSynqMv.gif
 [This section will be completed in Unit 9]
 Objects:
 - Users
-- Service Requests
-- Likes (accept requests)
-- 
+- Products/Service Requests
+- Businesses
 - Availability Schedule
 
 ### Models
