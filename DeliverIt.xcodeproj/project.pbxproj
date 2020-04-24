@@ -17,6 +17,13 @@
 		9936BDA12442585B001D4C9C /* DeliverItTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9936BDA02442585B001D4C9C /* DeliverItTests.swift */; };
 		9936BDAC2442585B001D4C9C /* DeliverItUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9936BDAB2442585B001D4C9C /* DeliverItUITests.swift */; };
 		99BAFA5B24492819005633B0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BAFA5A24492819005633B0 /* LoginViewController.swift */; };
+		99BFE40524525A5500D53976 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BFE40424525A5500D53976 /* CategoryViewController.swift */; };
+		99BFE40C245272F100D53976 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BFE40A245272F100D53976 /* CategoryCell.swift */; };
+		99BFE40D245272F100D53976 /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99BFE40B245272F100D53976 /* CategoryCell.xib */; };
+		99BFE40F245290A800D53976 /* BusinessViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BFE40E245290A800D53976 /* BusinessViewCell.swift */; };
+		99BFE4132452913D00D53976 /* BusinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BFE4122452913D00D53976 /* BusinessViewController.swift */; };
+		99BFE4152452975C00D53976 /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BFE4142452975C00D53976 /* ProductViewController.swift */; };
+		99BFE4172452977200D53976 /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BFE4162452977200D53976 /* ProductTableViewCell.swift */; };
 		CBEEFCF912FD97DF226AF470 /* Pods_DeliverIt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CC6F70E0C1780B38692AE3F /* Pods_DeliverIt.framework */; };
 		F85C968B244A6D9900FB98A3 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85C968A244A6D9900FB98A3 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
@@ -61,6 +68,13 @@
 		9936BDAB2442585B001D4C9C /* DeliverItUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliverItUITests.swift; sourceTree = "<group>"; };
 		9936BDAD2442585B001D4C9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99BAFA5A24492819005633B0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		99BFE40424525A5500D53976 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		99BFE40A245272F100D53976 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		99BFE40B245272F100D53976 /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		99BFE40E245290A800D53976 /* BusinessViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessViewCell.swift; sourceTree = "<group>"; };
+		99BFE4122452913D00D53976 /* BusinessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessViewController.swift; sourceTree = "<group>"; };
+		99BFE4142452975C00D53976 /* ProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		99BFE4162452977200D53976 /* ProductTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		C1123B45E7977037170ED665 /* Pods-DeliverIt-DeliverItUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeliverIt-DeliverItUITests.debug.xcconfig"; path = "Target Support Files/Pods-DeliverIt-DeliverItUITests/Pods-DeliverIt-DeliverItUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F85C968A244A6D9900FB98A3 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +150,13 @@
 				9936BD972442585B001D4C9C /* Info.plist */,
 				99BAFA5A24492819005633B0 /* LoginViewController.swift */,
 				F85C968A244A6D9900FB98A3 /* SignUpViewController.swift */,
+				99BFE40424525A5500D53976 /* CategoryViewController.swift */,
+				99BFE40A245272F100D53976 /* CategoryCell.swift */,
+				99BFE40B245272F100D53976 /* CategoryCell.xib */,
+				99BFE40E245290A800D53976 /* BusinessViewCell.swift */,
+				99BFE4122452913D00D53976 /* BusinessViewController.swift */,
+				99BFE4142452975C00D53976 /* ProductViewController.swift */,
+				99BFE4162452977200D53976 /* ProductTableViewCell.swift */,
 			);
 			path = DeliverIt;
 			sourceTree = "<group>";
@@ -280,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99BFE40D245272F100D53976 /* CategoryCell.xib in Resources */,
 				9936BD962442585B001D4C9C /* LaunchScreen.storyboard in Resources */,
 				9936BD932442585B001D4C9C /* Assets.xcassets in Resources */,
 				9936BD9124425859001D4C9C /* Main.storyboard in Resources */,
@@ -410,8 +432,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99BFE40524525A5500D53976 /* CategoryViewController.swift in Sources */,
 				99BAFA5B24492819005633B0 /* LoginViewController.swift in Sources */,
+				99BFE4132452913D00D53976 /* BusinessViewController.swift in Sources */,
+				99BFE40C245272F100D53976 /* CategoryCell.swift in Sources */,
 				9936BD8A24425859001D4C9C /* AppDelegate.swift in Sources */,
+				99BFE40F245290A800D53976 /* BusinessViewCell.swift in Sources */,
+				99BFE4152452975C00D53976 /* ProductViewController.swift in Sources */,
+				99BFE4172452977200D53976 /* ProductTableViewCell.swift in Sources */,
 				F85C968B244A6D9900FB98A3 /* SignUpViewController.swift in Sources */,
 				9936BD8C24425859001D4C9C /* SceneDelegate.swift in Sources */,
 			);

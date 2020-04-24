@@ -37,6 +37,7 @@ class LoginViewController: UIViewController {
         PFUser.logInWithUsername(inBackground: username, password: userPassword) { (user, error) in
             if user != nil{
                 print("We logged in!")
+                self.performSegue(withIdentifier: "loginSegue", sender: self)
             } else{
                 print("Error:\(error?.localizedDescription ?? "There was a problem logging in")")
             }
