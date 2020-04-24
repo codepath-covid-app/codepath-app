@@ -40,6 +40,8 @@ This app allows a user to place an order for delivery from different stores in t
 * User can request to register/post to their own business onto app.
 
 App : https://imgur.com/a/kSynqMv.gif
+Updated: <img src="https://imgur.com/AMe8tKP.gif" width=600>
+Updated: https://imgur.com/AMe8tKP.gif
 
 ### 2. Screen Archetypes
 
