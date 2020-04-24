@@ -47,12 +47,14 @@ App : https://imgur.com/a/kSynqMv.gif
    * User can login
 * Register
    * User can create a new account
-* Stream/View posts
-   * User can view a feed of all the posts made.
-* Make a post
-   * User can make a post specifying where he/she is going (for delivery).
+* Categories
+    * User can view and select a category
+* Stream/View businesses
+   * User can view a feed of all the businesses associated to the selected category.
+* Make a request
+   * User can make a request for what services or products they require
 * Schedule
-   * Helper sees user requests on a schedule
+   * User can see availability schedulem for businesses
 
 
 ### 3. Navigation
