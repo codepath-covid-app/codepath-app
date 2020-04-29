@@ -2,4 +2,7 @@ ${PODS_ROOT}/Target Support Files/Pods-DeliverIt-DeliverItUITests/Pods-DeliverIt
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework
 ${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework
+${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework
+${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework
+${BUILT_PRODUCTS_DIR}/GoogleAPIClient/GoogleAPIClient.framework
 ${BUILT_PRODUCTS_DIR}/Parse/Parse.framework
