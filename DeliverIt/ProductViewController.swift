@@ -17,14 +17,20 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var productTableView: UITableView!
     
+    @IBOutlet weak var scheduleView: UIView!
+    @IBOutlet weak var onSubmit: UIButton!
+    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBAction func onControlSwitched(_ sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
             case 0:
                 //Calendar is shown
                 productTableView.isHidden = false
+                scheduleView.isHidden = true
+                
             case 1:
                 productTableView.isHidden = true
+                scheduleView.isHidden = false
                 //Calendar is hidden
             default:
                 break
