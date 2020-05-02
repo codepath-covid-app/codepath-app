@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ydu-hE-oDI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -24,21 +24,21 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g75-y3-F2H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-154" y="-855"/>
+            <point key="canvasLocation" x="-141" y="132"/>
         </scene>
         <!--Profile-->
         <scene sceneID="VPV-4S-8H0">
             <objects>
                 <viewController id="WQM-fd-RDm" customClass="ProfileViewController" customModule="DeliverIt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s88-6F-jMb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eyh-7v-XnC">
-                                <rect key="frame" x="0.0" y="88" width="414" height="745"/>
+                                <rect key="frame" x="0.0" y="56" width="414" height="723"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ECi-IR-VnI">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="717"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="695"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qyx-30-Emh">
                                                 <rect key="frame" x="32" y="204" width="98" height="23"/>
@@ -240,6 +240,7 @@
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="onLogIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mZN-BD-wh5"/>
+                                    <segue destination="HuN-7Z-IWH" kind="presentation" identifier="loginSegue" id="67g-IE-b75"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SuK-gi-RLi">
@@ -257,13 +258,12 @@
                     <connections>
                         <outlet property="emailTextField" destination="5Rd-fg-i0c" id="NcL-OM-XV6"/>
                         <outlet property="passwordTextField" destination="QDm-bw-NBw" id="OTO-Dx-poS"/>
-                        <segue destination="BOD-Er-Uzn" kind="presentation" identifier="loginSegue" id="fIv-Kl-miz"/>
                         <segue destination="TMk-Ll-zjQ" kind="presentation" identifier="signUpSegue" id="Do8-nC-bJ7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="173"/>
+            <point key="canvasLocation" x="-1748" y="-207"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="7fK-jL-0bh">
@@ -340,6 +340,7 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="onSignUp:" destination="TMk-Ll-zjQ" eventType="touchUpInside" id="7lp-tr-rcg"/>
+                                    <segue destination="HuN-7Z-IWH" kind="presentation" identifier="newUserSegue" id="B26-6j-HcV"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h5n-5S-o3T">
@@ -370,12 +371,11 @@
                         <outlet property="passwordTextField" destination="7JO-YJ-P97" id="Zq1-Xz-OCT"/>
                         <outlet property="stateTextField" destination="dwt-dy-qTr" id="gL4-UF-UYg"/>
                         <outlet property="zipcodeTextField" destination="L9Q-Jx-DCC" id="4MB-o1-2l2"/>
-                        <segue destination="BOD-Er-Uzn" kind="presentation" identifier="newUserSegue" id="tR1-ZJ-4S8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kBQ-ol-3SY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134.78260869565219" y="863.83928571428567"/>
+            <point key="canvasLocation" x="-1748" y="485"/>
         </scene>
         <!--Category View Controller-->
         <scene sceneID="SGd-J6-Xly">
@@ -611,7 +611,7 @@
                     <tabBarItem key="tabBarItem" title="Profile" id="OoB-Lx-LGn"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3fU-V9-4kf">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -628,6 +628,6 @@
         <image name="person.circle" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tR1-ZJ-4S8"/>
+        <segue reference="B26-6j-HcV"/>
     </inferredMetricsTieBreakers>
 </document>
