@@ -17,14 +17,20 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     @IBOutlet weak var productTableView: UITableView!
     
+    @IBOutlet weak var scheduleView: UIView!
+    @IBOutlet weak var onSubmit: UIButton!
+    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBAction func onControlSwitched(_ sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
             case 0:
                 //Calendar is shown
                 productTableView.isHidden = false
+                scheduleView.isHidden = true
+                
             case 1:
                 productTableView.isHidden = true
+                scheduleView.isHidden = false
                 //Calendar is hidden
             default:
                 break
@@ -34,6 +40,7 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
         super.viewDidLoad()
         productTableView.delegate = self
         productTableView.dataSource = self
+        PFUser.current()!["cart"] = []
 
         // Do any additional setup after loading the view.
     }
@@ -44,6 +51,7 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = productTableView.dequeueReusableCell(withIdentifier: "Product") as! ProductTableViewCell
         let product = products[indexPath.row]
+        cell.product = product
         cell.nameLabel.text = product["Name"] as! String
         cell.priceLabel.text = String(format: "$%.2f", (product["Price"] as AnyObject).floatValue)
         cell.countLabel.text = "0"
