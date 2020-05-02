@@ -7,16 +7,27 @@
 //
 
 import UIKit
+import Parse
 
 class CategoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    let dataArray = ["Food", "Repair", "Beauty", "Cleaning"]
+    var dataArray = [PFObject]()
     
     var estimateWidth = 150.0
     var cellMarginSize = 16.0
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        let query = PFQuery(className:"Businesses")
+        query.findObjectsInBackground { (data, error) in
+            if data != nil {
+                self.dataArray = data!
+                self.collectionView.reloadData()
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
@@ -40,18 +51,19 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4;
+        return dataArray.count;
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
-        cell.setText(text: self.dataArray[indexPath.row])
+        let businesses = self.dataArray[indexPath.row]
+        let string = businesses["Category"] as! String
+        cell.setText(text: string)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.calculateWidth()
-        print(width)
         return CGSize(width: width, height: width)
     }
     

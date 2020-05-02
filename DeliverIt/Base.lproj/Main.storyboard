@@ -259,7 +259,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="nameLabel" destination="D3e-Gy-CZp" id="Pik-67-QLn"/>
-                                            <segue destination="1RB-R1-w1Y" kind="presentation" identifier="businessSegue" id="JEB-pA-Cub"/>
+                                            <segue destination="1RB-R1-w1Y" kind="presentation" identifier="businessSegue" id="xew-B6-e3W"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -275,6 +275,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="8ca-xi-Cez"/>
                     </view>
+                    <navigationItem key="navigationItem" id="5h7-zf-9Jf"/>
                     <connections>
                         <outlet property="businessTableVIew" destination="NiA-nk-dch" id="i3O-HR-wzH"/>
                     </connections>
@@ -364,6 +365,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="681-bA-fNi"/>
                     </view>
+                    <navigationItem key="navigationItem" id="6Jo-4k-J8e"/>
                     <connections>
                         <outlet property="productTableView" destination="yq8-LZ-aQq" id="BsD-My-gSm"/>
                         <outlet property="segmentedControl" destination="b6C-s6-7OK" id="YNg-F2-w6w"/>
@@ -378,6 +380,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BOD-Er-Uzn" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="QTc-Hw-XoP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ijx-eP-ncI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -400,6 +403,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="fIv-Kl-miz"/>
+        <segue reference="tR1-ZJ-4S8"/>
     </inferredMetricsTieBreakers>
 </document>
