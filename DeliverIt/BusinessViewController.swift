@@ -7,13 +7,27 @@
 //
 
 import UIKit
+import Parse
 
 class BusinessViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var businessTableVIew: UITableView!
     
-    let businesses = ["Buisness 1", "Business 2", "Business 3", "Business 4"]
+    var businesses = [PFObject]()
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        
+        let query = PFQuery(className:"Businesses")
+        query.includeKey("Products")
+        query.findObjectsInBackground { (data, error) in
+            if data != nil {
+                self.businesses = data!
+                self.businessTableVIew.reloadData()
+            }
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         businessTableVIew.dataSource = self
@@ -27,12 +41,24 @@ class BusinessViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = businessTableVIew.dequeueReusableCell(withIdentifier: "BusinessCell") as! BusinessViewCell
-        cell.nameLabel.text = businesses[indexPath.row]
+        let business = self.businesses[indexPath.row]
+        let string = business["Name"] as! String
+        cell.nameLabel.text = string
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "businessSegue", sender: self)
+    //func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //    self.performSegue(withIdentifier: "businessSegue", sender: self)
+    //}
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        let indexPath = businessTableVIew.indexPath(for: cell)!
+        let business = businesses[indexPath.row]
+        let products = business["Products"]
+        let productView = segue.destination as! ProductViewController
+        productView.products = products as! [PFObject]
+        businessTableVIew.deselectRow(at: indexPath, animated: true)
     }
     
     

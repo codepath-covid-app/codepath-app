@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Parse
 
 class ProductViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    let products = ["Product 1", "Product 2", "Product 3"]
-
+    //let products = ["Product 1", "Product 2", "Product 3"]
+    
+    var products: [PFObject] = []
+    
     @IBOutlet weak var productTableView: UITableView!
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -40,8 +43,9 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = productTableView.dequeueReusableCell(withIdentifier: "Product") as! ProductTableViewCell
-        cell.nameLabel.text = "Name"
-        cell.priceLabel.text = "Price"
+        let product = products[indexPath.row]
+        cell.nameLabel.text = product["Name"] as! String
+        cell.priceLabel.text = String(format: "$%.2f", (product["Price"] as AnyObject).floatValue)
         cell.countLabel.text = "0"
         return cell
     }

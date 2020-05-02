@@ -8,6 +8,8 @@ target 'DeliverIt' do
   # Pods for DeliverIt
   pod "Parse"
   pod "AlamofireImage"
+  pod "GoogleAPIClient"
+  pod "GTMOAuth2"
 
   target 'DeliverItTests' do
     inherit! :search_paths
