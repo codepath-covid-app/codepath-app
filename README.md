@@ -27,8 +27,8 @@ This app allows a user to place an order for delivery from different stores in t
 
 - [x] User can create a new account
 - [x] User can login
-* User can select a category and view businesses related to that category
-* User can select various products or services to request from a business
+- [x] User can select a category and view businesses related to that category
+- [x] User can select various products or services to request from a business
 * User can view availability of businesses and fill in time slots to have their products delivered or to have service performed
 
 
@@ -41,6 +41,7 @@ This app allows a user to place an order for delivery from different stores in t
 
 App : https://imgur.com/a/kSynqMv.gif
 Updated: https://imgur.com/AMe8tKP.gif
+Last Updated: https://imgur.com/z0TEypS
 
 ### 2. Screen Archetypes
 
