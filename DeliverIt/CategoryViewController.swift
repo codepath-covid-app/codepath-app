@@ -12,7 +12,8 @@ import Parse
 class CategoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    var dataArray = [PFObject]()
+    var businesses = [PFObject]()
+    var categories = [String] ()
     
     var estimateWidth = 150.0
     var cellMarginSize = 16.0
@@ -23,8 +24,14 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         let query = PFQuery(className:"Businesses")
         query.findObjectsInBackground { (data, error) in
             if data != nil {
-                self.dataArray = data!
-                self.collectionView.reloadData()
+                for d in data! {
+                    if !self.categories.contains(d["Category"] as! String)  {
+                        self.businesses.append(d)
+                        self.categories.append(d["Category"] as! String)
+                        self.collectionView.reloadData()
+                    
+                    }
+                }
             }
         }
     }
@@ -51,14 +58,13 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataArray.count;
+        return categories.count;
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
-        let businesses = self.dataArray[indexPath.row]
-        let string = businesses["Category"] as! String
-        cell.setText(text: string)
+        let businesses = self.categories[indexPath.row]
+        cell.setText(text: businesses)
         return cell
     }
     
