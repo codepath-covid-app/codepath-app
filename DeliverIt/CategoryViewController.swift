@@ -54,7 +54,8 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "categorySegue", sender: self)
+        let cell = collectionView.cellForItem(at: indexPath)
+        self.performSegue(withIdentifier: "categorySegue", sender: cell as! UICollectionViewCell)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -81,14 +82,16 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         let width = (self.view.frame.size.width - CGFloat(cellMarginSize) * (cellCount - 1) - margin) / cellCount
         return width
     }
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let cell = sender as! UICollectionViewCell
+        let indexPath = collectionView.indexPath(for: cell)
+        let businessView = segue.destination as! BusinessViewController
+        businessView.category = categories[indexPath!.row]
+        collectionView.deselectItem(at: indexPath!, animated: true)
     }
-    */
 
 }
