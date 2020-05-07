@@ -26,6 +26,7 @@ class BusinessViewController: UIViewController, UITableViewDataSource, UITableVi
                 self.businessTableVIew.reloadData()
             }
         }
+    
     }
 
     override func viewDidLoad() {

@@ -12,10 +12,23 @@ import Parse
 class ProductViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     //let products = ["Product 1", "Product 2", "Product 3"]
+
     
     var products: [PFObject] = []
     
     @IBOutlet weak var productTableView: UITableView!
+    
+    override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(true)
+        let query = PFQuery(className:"Products")
+        query.findObjectsInBackground { (data, error) in
+            if data != nil {
+                self.products = data!
+                self.productTableView.reloadData()
+            }
+        }
+    }
+
     
     @IBOutlet weak var scheduleView: UIView!
     @IBOutlet weak var onSubmit: UIButton!
@@ -36,14 +49,17 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
                 break
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         productTableView.delegate = self
         productTableView.dataSource = self
         PFUser.current()!["cart"] = []
+        
+        }
+        
 
         // Do any additional setup after loading the view.
-    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return products.count
     }
