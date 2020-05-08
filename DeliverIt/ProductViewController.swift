@@ -32,7 +32,7 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
         bizProduct["Price"] = 6.80
         bizProduct["Name"] = "Ash Candle"
         bizProduct["Price"] = 9.00
-        bizProduct[""]
+       // bizProduct[""]
         bizProduct.saveInBackground{
             (succeeded, error) in
             if(succeeded){
@@ -40,7 +40,7 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             else{}
         }
-        smallBusiness["Products"] = ["Nail Lacquer", "Ash Candle"]
+        //smallBusiness["Products"] = ["Nail Lacquer", "Ash Candle"]
     }
 
     @IBOutlet weak var scheduleView: UIView!
