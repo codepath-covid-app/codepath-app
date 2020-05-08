@@ -14,18 +14,21 @@ class BusinessViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var businessTableVIew: UITableView!
     
     var businesses = [PFObject]()
+    var category = String ()
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
         let query = PFQuery(className:"Businesses")
         query.includeKey("Products")
+        query.whereKey("Category", equalTo: category)
         query.findObjectsInBackground { (data, error) in
             if data != nil {
                 self.businesses = data!
                 self.businessTableVIew.reloadData()
             }
         }
+    
     }
 
     override func viewDidLoad() {
@@ -60,7 +63,6 @@ class BusinessViewController: UIViewController, UITableViewDataSource, UITableVi
         productView.products = products as! [PFObject]
         businessTableVIew.deselectRow(at: indexPath, animated: true)
     }
-    
     
 
     /*
