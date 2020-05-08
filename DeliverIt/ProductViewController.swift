@@ -21,6 +21,8 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var onSubmit: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    
+    
     @IBAction func onControlSwitched(_ sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
             case 0:
@@ -57,6 +59,12 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.countLabel.text = "0"
         return cell
     }
+    
+    
+    @IBAction func selectDate(_ sender: Any) {
+        performSegue(withIdentifier: "nextView", sender: self)
+    }
+    
     
 
     /*
