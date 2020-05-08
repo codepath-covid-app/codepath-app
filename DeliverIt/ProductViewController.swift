@@ -27,9 +27,22 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.productTableView.reloadData()
             }
         }
+        let bizProduct = PFObject(className: "Products")
+        bizProduct["Name"] = "As If Nail Laquer"
+        bizProduct["Price"] = 6.80
+        bizProduct["Name"] = "Ash Candle"
+        bizProduct["Price"] = 9.00
+        bizProduct[""]
+        bizProduct.saveInBackground{
+            (succeeded, error) in
+            if(succeeded){
+                
+            }
+            else{}
+        }
+        smallBusiness["Products"] = ["Nail Lacquer", "Ash Candle"]
     }
 
-    
     @IBOutlet weak var scheduleView: UIView!
     @IBOutlet weak var onSubmit: UIButton!
     @IBOutlet weak var datePicker: UIDatePicker!
