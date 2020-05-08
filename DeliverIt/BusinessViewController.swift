@@ -28,6 +28,7 @@ class BusinessViewController: UIViewController, UITableViewDataSource, UITableVi
                 self.businessTableVIew.reloadData()
             }
         }
+<<<<<<< HEAD
         let smallBusiness = PFObject(className: "Businesses")
         smallBusiness["Name"] = "Keratin Shop"
         smallBusiness["Category"] = "Beauty"
@@ -41,6 +42,9 @@ class BusinessViewController: UIViewController, UITableViewDataSource, UITableVi
             else{
             }
         }
+=======
+    
+>>>>>>> 3497d99c037f101f6d1f4b226cbba69c71959570
     }
 
 
@@ -76,7 +80,6 @@ class BusinessViewController: UIViewController, UITableViewDataSource, UITableVi
         productView.products = products as! [PFObject]
         businessTableVIew.deselectRow(at: indexPath, animated: true)
     }
-    
     
 
     /*
