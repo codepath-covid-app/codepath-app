@@ -28,24 +28,7 @@ class BusinessViewController: UIViewController, UITableViewDataSource, UITableVi
                     self.businessTableVIew.reloadData()
                 }
             }
-            let smallBusiness = PFObject(className: "Businesses")
-                   smallBusiness["Name"] = "Chillhouse"
-                   smallBusiness["Category"] = "Beauty"
-                   smallBusiness["Owner"] = "Cyndi-Ramirez Fulton"
-                   let bizProduct = PFObject(className: "Product")
-                   bizProduct["Name"] = "hair shampoo"
-                   bizProduct["Price"] = 8.90
-                   smallBusiness["Products"] = [bizProduct]
-                   smallBusiness.saveInBackground{
-                             (succeeded, error) in
-                             if(succeeded){
-                                 
-                             }
-                             else{
-                             }
-                   
-                   }
-
+            
         }
 
         override func viewDidLoad() {
@@ -91,4 +74,5 @@ class BusinessViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         */
 
-    }
+}
+

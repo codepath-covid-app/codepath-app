@@ -17,19 +17,6 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
     var products: [PFObject] = []
     
     @IBOutlet weak var productTableView: UITableView!
-    
-    override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(true)
-        let query = PFQuery(className:"Product")
-        query.findObjectsInBackground { (data, error) in
-            if data != nil {
-                self.products = data!
-                self.productTableView.reloadData()
-            }
-        }
-        
-        //smallBusiness["Product"] = ["Nail Lacquer", "Ash Candle"]
-    }
 
     @IBOutlet weak var scheduleView: UIView!
     @IBOutlet weak var onSubmit: UIButton!

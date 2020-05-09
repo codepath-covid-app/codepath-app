@@ -11,6 +11,7 @@ import UIKit
 class CategoryCell: UICollectionViewCell {
 
     @IBOutlet weak var textLabel: UILabel!
+  
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,5 +21,8 @@ class CategoryCell: UICollectionViewCell {
     func setText(text: String){
         self.textLabel.text = text
     }
+    
+    
+    
 
 }
