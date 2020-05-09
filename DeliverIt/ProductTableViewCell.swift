@@ -16,6 +16,8 @@ class ProductTableViewCell: UITableViewCell {
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     
+    //@IBOutlet weak var totalPriceOutput: UITextField!
+    
     var product: PFObject? = nil
 
     @IBAction func onStepperAction(_ sender: UIStepper) {
@@ -48,6 +50,8 @@ class ProductTableViewCell: UITableViewCell {
                 }
             }
         }
+        
+        
         
     }
     override func awakeFromNib() {
