@@ -22,6 +22,10 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    //@IBOutlet weak var totalPriceOutput: UITextField!
+    
+    @IBOutlet weak var totalPriceOutput: UITextField!
+    @IBOutlet weak var totalPriceView: UIView!
     
     @IBAction func onControlSwitched(_ sender: UISegmentedControl) {
         switch segmentedControl.selectedSegmentIndex {
@@ -29,10 +33,12 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
                 //Calendar is shown
                 productTableView.isHidden = false
                 scheduleView.isHidden = true
+                totalPriceView.isHidden = false
                 
             case 1:
                 productTableView.isHidden = true
                 scheduleView.isHidden = false
+                totalPriceView.isHidden = true
                 //Calendar is hidden
             default:
                 break
@@ -45,6 +51,8 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
         PFUser.current()!["cart"] = []
 
         // Do any additional setup after loading the view.
+        
+        //super.viewDidLoad()
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return products.count
@@ -65,6 +73,24 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
         performSegue(withIdentifier: "nextView", sender: self)
     }
     
+    //func
+    
+    
+    @IBAction func calculateTotalPrice(_ sender: Any) {
+        let user = PFUser.current()
+        let cart = (user?["cart"] as? [PFObject])!
+        
+        //ordersList = cart[0]
+        var totalPrice = 0.0
+        //var orders = [String]()
+        for item in cart{
+            //print(item)
+            //orders.append(item["Name"] as! String) as! String
+            totalPrice += item["Price"] as! Double
+            //print(type(of: item["Price"]))
+        }
+        totalPriceOutput.text = String(format: "%.2f", totalPrice)
+    }
     
 
     /*
