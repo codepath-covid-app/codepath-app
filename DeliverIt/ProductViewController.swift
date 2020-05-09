@@ -20,7 +20,7 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(true)
-        let query = PFQuery(className:"Products")
+        let query = PFQuery(className:"Product")
         query.findObjectsInBackground { (data, error) in
             if data != nil {
                 self.products = data!
@@ -58,19 +58,7 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
         productTableView.delegate = self
         productTableView.dataSource = self
         PFUser.current()!["cart"] = []
-        let bizProduct = PFObject(className: "Products")
-         bizProduct["Name"] = "Hair Shampoo"
-         bizProduct["Price"] = 6.80
-        // bizProduct[""]
-         bizProduct.saveInBackground{
-             (succeeded, error) in
-             if(succeeded){
-                 
-             }
-             else{}
-         }
-        
-        }
+    }
         
 
         // Do any additional setup after loading the view.

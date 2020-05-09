@@ -14,82 +14,81 @@ class BusinessViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var businessTableVIew: UITableView!
     
     var businesses = [PFObject]()
-    var category = String ()
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
+        var category = String ()
         
-        let query = PFQuery(className:"Businesses")
-        query.includeKey("Products")
-        query.whereKey("Category", equalTo: category)
-        query.findObjectsInBackground { (data, error) in
-            if data != nil {
-                self.businesses = data!
-                self.businessTableVIew.reloadData()
+        override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(true)
+            
+            let query = PFQuery(className:"Businesses")
+            query.includeKey("Products")
+            query.whereKey("Category", equalTo: category)
+            query.findObjectsInBackground { (data, error) in
+                if data != nil {
+                    self.businesses = data!
+                    self.businessTableVIew.reloadData()
+                }
             }
+            let smallBusiness = PFObject(className: "Businesses")
+                   smallBusiness["Name"] = "Chillhouse"
+                   smallBusiness["Category"] = "Beauty"
+                   smallBusiness["Owner"] = "Cyndi-Ramirez Fulton"
+                   let bizProduct = PFObject(className: "Product")
+                   bizProduct["Name"] = "hair shampoo"
+                   bizProduct["Price"] = 8.90
+                   smallBusiness["Products"] = [bizProduct]
+                   smallBusiness.saveInBackground{
+                             (succeeded, error) in
+                             if(succeeded){
+                                 
+                             }
+                             else{
+                             }
+                   
+                   }
+
         }
-<<<<<<< HEAD
-        let smallBusiness = PFObject(className: "Businesses")
-        smallBusiness["Name"] = "Keratin Shop"
-        smallBusiness["Category"] = "Beauty"
-        smallBusiness["Owner"] = "Katie"
-        //smallBusiness["Products"] = [{"className": "Products","objectId": "KsbSlb05Ji"}, {"className": "Products","objectId": "Xi6Xr2OE5s"}]
-        smallBusiness.saveInBackground{
-            (succeeded, error) in
-            if(succeeded){
-                
-            }
-            else{
-            }
+
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            businessTableVIew.dataSource = self
+            businessTableVIew.delegate = self
+
+            // Do any additional setup after loading the view.
         }
-=======
-    
->>>>>>> 3497d99c037f101f6d1f4b226cbba69c71959570
-    }
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return businesses.count
+        }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = businessTableVIew.dequeueReusableCell(withIdentifier: "BusinessCell") as! BusinessViewCell
+            let business = self.businesses[indexPath.row]
+            let string = business["Name"] as! String
+            cell.nameLabel.text = string
+            return cell
+        }
+        
+        //func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //    self.performSegue(withIdentifier: "businessSegue", sender: self)
+        //}
+        
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            let cell = sender as! UITableViewCell
+            let indexPath = businessTableVIew.indexPath(for: cell)!
+            let business = businesses[indexPath.row]
+            let products = business["Products"]
+            let productView = segue.destination as! ProductViewController
+            productView.products = products as! [PFObject]
+            businessTableVIew.deselectRow(at: indexPath, animated: true)
+        }
+        
 
+        /*
+        // MARK: - Navigation
+        // In a storyboard-based application, you will often want to do a little preparation before navigation
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            // Get the new view controller using segue.destination.
+            // Pass the selected object to the new view controller.
+        }
+        */
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        businessTableVIew.dataSource = self
-        businessTableVIew.delegate = self
-
-        // Do any additional setup after loading the view.
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return businesses.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = businessTableVIew.dequeueReusableCell(withIdentifier: "BusinessCell") as! BusinessViewCell
-        let business = self.businesses[indexPath.row]
-        let string = business["Name"] as! String
-        cell.nameLabel.text = string
-        return cell
-    }
-    
-    //func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //    self.performSegue(withIdentifier: "businessSegue", sender: self)
-    //}
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let cell = sender as! UITableViewCell
-        let indexPath = businessTableVIew.indexPath(for: cell)!
-        let business = businesses[indexPath.row]
-        let products = business["Products"]
-        let productView = segue.destination as! ProductViewController
-        productView.products = products as! [PFObject]
-        businessTableVIew.deselectRow(at: indexPath, animated: true)
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
