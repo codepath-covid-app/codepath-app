@@ -73,34 +73,6 @@
             </objects>
             <point key="canvasLocation" x="-142" y="925"/>
         </scene>
-        <!--Table View Controller-->
-        <scene sceneID="Icy-Qw-obV">
-            <objects>
-                <tableViewController id="FRt-Q3-sN5" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="we6-bg-WGH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="s0j-2H-q9C">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s0j-2H-q9C" id="ZgQ-Gi-roV">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="FRt-Q3-sN5" id="uDn-sh-1z0"/>
-                            <outlet property="delegate" destination="FRt-Q3-sN5" id="8Ot-hI-fVZ"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rlw-KY-bYb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="708" y="926"/>
-        </scene>
         <!--Profile-->
         <scene sceneID="VPV-4S-8H0">
             <objects>
@@ -745,9 +717,26 @@
                                 </state>
                                 <connections>
                                     <action selector="submitOrder:" destination="78c-A4-R8u" eventType="touchUpInside" id="utO-eN-7ok"/>
-                                    <segue destination="BOD-Er-Uzn" kind="presentation" identifier="finishedOrder" id="UXQ-PO-trA"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fgF-gJ-qon">
+                                <rect key="frame" x="57" y="703" width="103" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nY3-PD-vUv">
+                                <rect key="frame" x="200" y="700" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="dollarsign.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AVU-Aj-PMl">
+                                <rect key="frame" x="174" y="704" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="3mk-6V-ElA"/>
@@ -755,7 +744,8 @@
                     <connections>
                         <outlet property="ordersList" destination="o5a-fU-dhR" id="SVS-SZ-fAP"/>
                         <outlet property="submitOrderButton" destination="MMh-gb-LTX" id="r8q-kJ-FZ9"/>
-                        <outlet property="totalPriceOutput" destination="RCi-Bp-HQp" id="4JZ-YR-3uO"/>
+                        <outlet property="totalPriceOutput" destination="nY3-PD-vUv" id="8wf-oM-Clc"/>
+                        <segue destination="HuN-7Z-IWH" kind="presentation" identifier="finishedOrder" id="bBG-bB-FeF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FVW-eA-fwA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -810,11 +800,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="dollarsign.circle" catalog="system" width="64" height="60"/>
         <image name="dollarsign.square" catalog="system" width="64" height="56"/>
         <image name="person.circle" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UXQ-PO-trA"/>
-        <segue reference="B26-6j-HcV"/>
+        <segue reference="bBG-bB-FeF"/>
     </inferredMetricsTieBreakers>
 </document>

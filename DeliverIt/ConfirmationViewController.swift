@@ -12,11 +12,9 @@ import Parse
 class ConfirmationViewController: UIViewController {
     
     
+    
     @IBOutlet weak var totalPriceOutput: UITextField!
-    
-    //@IBOutlet weak var ordersList: UITextField!
-    
-    //@IBOutlet weak var ordersList: UIView!
+
     
     @IBOutlet weak var ordersList: UITextView!
     
@@ -26,50 +24,29 @@ class ConfirmationViewController: UIViewController {
     var strng: String = ""
     //var timer = Timer()
 
-//    func testFunc() {
-//        let user = PFUser.current()
-//        let cart = (user?["cart"] as? [PFObject])!
-//        print(cart[0])
-//        //ordersList = cart[0]
-//        //var totalPrice = 0.0
-//        var orders = [String]()
-//        for item in cart{
-//            //print(item)
-//            orders.append(item["Name"] as! String)
-//        //  totalPrice += item["Price"] as! Double
-//        //   print(type(of: item["Price"]))
-//        }
-//        for o in orders{
-//            strng += "\(o)\n"
-//        }
-//        //strng += "\(orders[i])\n"
-//        ordersList.text = strng
-//        if i == orders.count - 1 {
-//            timer.invalidate()
-//        }
-//        //i += 1
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: Selector(("testFunc")), userInfo: nil, repeats: true)
+        
         let user = PFUser.current()
         let cart = (user?["cart"] as? [PFObject])!
         print(cart[0])
         //ordersList = cart[0]
-        //var totalPrice = 0.0
+        
+        var totalPrice = 0.0
         var orders = [String]()
         for item in cart{
             //print(item)
             orders.append(item["Name"] as! String)
-        //  totalPrice += item["Price"] as! Double
+            totalPrice += item["Price"] as! Double
         //   print(type(of: item["Price"]))
         }
         for o in orders{
             strng += "\(o)\n"
         }
         //strng += "\(orders[i])\n"
-        print(strng)
+        //print(strng)
+        totalPriceOutput.text = String(format: "%.2f", totalPrice)
         ordersList.text = strng
         
 
