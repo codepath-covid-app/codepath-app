@@ -11,9 +11,8 @@ import Parse
 
 class ConfirmationViewController: UIViewController {
     
-    
-    @IBOutlet weak var totalPriceOutput: UITextField!
-    
+        
+    @IBOutlet weak var priceOutput: UILabel!
     //@IBOutlet weak var ordersList: UITextField!
     
 
@@ -31,7 +30,7 @@ class ConfirmationViewController: UIViewController {
             totalPrice += item["Price"] as! Double
             //print(type(of: item["Price"]))
         }
-        totalPriceOutput.text = String(format: "%.2f", totalPrice)
+        priceOutput.text = String(format: "$%.2f", totalPrice)
         //ordersList.text = orders
 
         // Do any additional setup after loading the view.
