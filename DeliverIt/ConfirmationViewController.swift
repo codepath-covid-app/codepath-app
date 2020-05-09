@@ -11,12 +11,14 @@ import Parse
 
 class ConfirmationViewController: UIViewController {
     
+
     
     
     @IBOutlet weak var totalPriceOutput: UITextField!
 
     
     @IBOutlet weak var ordersList: UITextView!
+
     
     @IBOutlet weak var submitOrderButton: UIButton!
     
@@ -41,6 +43,7 @@ class ConfirmationViewController: UIViewController {
             totalPrice += item["Price"] as! Double
         //   print(type(of: item["Price"]))
         }
+
         for o in orders{
             strng += "\(o)\n"
         }
