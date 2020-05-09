@@ -25,6 +25,7 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
     //@IBOutlet weak var totalPriceOutput: UITextField!
     
     @IBOutlet weak var totalPriceOutput: UITextField!
+    @IBOutlet weak var priceOutput: UILabel!
     @IBOutlet weak var totalPriceView: UIView!
     
     @IBAction func onControlSwitched(_ sender: UISegmentedControl) {
@@ -89,7 +90,7 @@ class ProductViewController: UIViewController, UITableViewDelegate, UITableViewD
             totalPrice += item["Price"] as! Double
             //print(type(of: item["Price"]))
         }
-        totalPriceOutput.text = String(format: "%.2f", totalPrice)
+        priceOutput.text = String(format: "%.2f", totalPrice)
     }
     
 
