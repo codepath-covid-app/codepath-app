@@ -10,10 +10,7 @@ import UIKit
 import Parse
 
 class CategoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    struct Item
-    {
-        var imageName: String
-    }
+  
     @IBOutlet weak var collectionView: UICollectionView!
     var businesses = [PFObject]()
     var categories = [String] ()
