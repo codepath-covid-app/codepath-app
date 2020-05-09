@@ -14,8 +14,7 @@ class ConfirmationViewController: UIViewController {
 
     
     
-    @IBOutlet weak var totalPriceOutput: UITextField!
-
+    @IBOutlet weak var priceOutput: UILabel!
     
     @IBOutlet weak var ordersList: UITextView!
 
@@ -49,7 +48,7 @@ class ConfirmationViewController: UIViewController {
         }
         //strng += "\(orders[i])\n"
         //print(strng)
-        totalPriceOutput.text = String(format: "%.2f", totalPrice)
+        priceOutput.text = String(format: "$%.2f", totalPrice)
         ordersList.text = strng
         
 
