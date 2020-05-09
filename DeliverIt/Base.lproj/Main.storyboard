@@ -20,11 +20,86 @@
                     <connections>
                         <segue destination="BOD-Er-Uzn" kind="relationship" relationship="viewControllers" id="H7S-Vc-QEr"/>
                         <segue destination="Aem-ro-p8b" kind="relationship" relationship="viewControllers" id="Cca-9Z-xz2"/>
+                        <segue destination="m9o-Qb-t2m" kind="relationship" relationship="viewControllers" id="vZm-Nc-nkk"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g75-y3-F2H" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-141" y="132"/>
+        </scene>
+        <!--Receipts-->
+        <scene sceneID="Ggo-Ir-LW9">
+            <objects>
+                <tableViewController id="z3u-8Z-Yhm" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="0Ri-yY-8wc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="76" id="B3u-xS-fvu">
+                                <rect key="frame" x="0.0" y="28" width="414" height="76"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B3u-xS-fvu" id="Y6I-YN-mhf">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="z3u-8Z-Yhm" id="GuT-fv-FyX"/>
+                            <outlet property="delegate" destination="z3u-8Z-Yhm" id="my4-Rs-yeU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Receipts" id="0ic-fm-YtP"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C4t-d3-G7e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-142.02898550724638" y="1855.5803571428571"/>
+        </scene>
+        <!--Receipts-->
+        <scene sceneID="hA5-f4-EYS">
+            <objects>
+                <navigationController id="m9o-Qb-t2m" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Receipts" id="u8T-ec-cd5"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5sE-sH-Je0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="z3u-8Z-Yhm" kind="relationship" relationship="rootViewController" id="jys-Kg-pT9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3DD-ko-TWM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-142" y="925"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="Icy-Qw-obV">
+            <objects>
+                <tableViewController id="FRt-Q3-sN5" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="we6-bg-WGH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="s0j-2H-q9C">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="s0j-2H-q9C" id="ZgQ-Gi-roV">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FRt-Q3-sN5" id="uDn-sh-1z0"/>
+                            <outlet property="delegate" destination="FRt-Q3-sN5" id="8Ot-hI-fVZ"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rlw-KY-bYb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="708" y="926"/>
         </scene>
         <!--Profile-->
         <scene sceneID="VPV-4S-8H0">
@@ -384,7 +459,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kBQ-ol-3SY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1813" y="522"/>
+            <point key="canvasLocation" x="-2099" y="493"/>
         </scene>
         <!--Category View Controller-->
         <scene sceneID="SGd-J6-Xly">
@@ -542,7 +617,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yq8-LZ-aQq">
-                                <rect key="frame" x="0.0" y="152" width="414" height="690"/>
+                                <rect key="frame" x="0.0" y="152" width="414" height="531"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
@@ -592,6 +667,32 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o5k-uQ-aU3">
+                                <rect key="frame" x="87" y="691" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5G4-bG-S21">
+                                        <rect key="frame" x="36" y="8" width="140" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Calculate Total Price"/>
+                                        <connections>
+                                            <action selector="calculateTotalPrice:" destination="1RB-R1-w1Y" eventType="touchUpInside" id="s7s-p3-ExY"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RCi-Bp-HQp">
+                                        <rect key="frame" x="48" y="46" width="128" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="dollarsign.square" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ojb-cf-3u9">
+                                        <rect key="frame" x="16" y="50" width="32" height="27"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="681-bA-fNi"/>
@@ -603,11 +704,13 @@
                         <outlet property="productTableView" destination="yq8-LZ-aQq" id="BsD-My-gSm"/>
                         <outlet property="scheduleView" destination="uNE-T8-cjK" id="ALh-KG-Ovq"/>
                         <outlet property="segmentedControl" destination="b6C-s6-7OK" id="YNg-F2-w6w"/>
+                        <outlet property="totalPriceOutput" destination="RCi-Bp-HQp" id="p1M-zA-oHx"/>
+                        <outlet property="totalPriceView" destination="o5k-uQ-aU3" id="XhN-wo-HJv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g4O-yJ-SlF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3881" y="-143"/>
+            <point key="canvasLocation" x="3879.7101449275365" y="-143.30357142857142"/>
         </scene>
         <!--Confirmation View Controller-->
         <scene sceneID="uYg-Kx-xkg">
@@ -624,26 +727,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oki-qf-Z1N">
-                                <rect key="frame" x="151" y="210" width="94" height="26"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="o5a-fU-dhR">
+                                <rect key="frame" x="57" y="123" width="282" height="495"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RCi-Bp-HQp">
-                                <rect key="frame" x="134" y="244" width="128" height="34"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MMh-gb-LTX">
+                                <rect key="frame" x="102" y="735" width="195" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZ2-rO-3Hr">
-                                <rect key="frame" x="152" y="363" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Submit Order"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <state key="normal" title="Submit Order">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
-                                    <action selector="submitOrder:" destination="78c-A4-R8u" eventType="touchUpInside" id="ZF4-NL-bX8"/>
-                                    <segue destination="ydu-hE-oDI" kind="presentation" identifier="finishedOrder" id="cIy-ao-ZPo"/>
+                                    <action selector="submitOrder:" destination="78c-A4-R8u" eventType="touchUpInside" id="utO-eN-7ok"/>
+                                    <segue destination="BOD-Er-Uzn" kind="presentation" identifier="finishedOrder" id="UXQ-PO-trA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -651,12 +753,14 @@
                         <viewLayoutGuide key="safeArea" id="3mk-6V-ElA"/>
                     </view>
                     <connections>
+                        <outlet property="ordersList" destination="o5a-fU-dhR" id="SVS-SZ-fAP"/>
+                        <outlet property="submitOrderButton" destination="MMh-gb-LTX" id="r8q-kJ-FZ9"/>
                         <outlet property="totalPriceOutput" destination="RCi-Bp-HQp" id="4JZ-YR-3uO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FVW-eA-fwA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4859" y="-121"/>
+            <point key="canvasLocation" x="4294" y="1028"/>
         </scene>
         <!--Categories-->
         <scene sceneID="bgl-Vi-VHq">
@@ -706,10 +810,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="dollarsign.square" catalog="system" width="64" height="56"/>
         <image name="person.circle" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cIy-ao-ZPo"/>
-        <segue reference="67g-IE-b75"/>
+        <segue reference="UXQ-PO-trA"/>
+        <segue reference="B26-6j-HcV"/>
     </inferredMetricsTieBreakers>
 </document>

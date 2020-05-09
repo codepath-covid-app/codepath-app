@@ -24,7 +24,7 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
    
     
-    
+  
     
     // sign up fields
     
@@ -32,8 +32,8 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         let newUser = PFUser.current()
-        firstNameTextField.text = newUser?["username"] as! String
-        lastNameTextField.text = newUser?["password"] as! String
+        firstNameTextField.text = newUser?["firstname"] as! String
+        lastNameTextField.text = newUser?["lastname"] as! String
         birthdayTextField.text = newUser?["birthday"] as! String
         streetAddressTextField.text = newUser?["address"] as! String
         cityTextField.text = newUser?["city"] as! String
